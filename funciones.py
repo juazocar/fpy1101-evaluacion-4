@@ -1,19 +1,19 @@
 # ===== FUNCIONES DE MENÚ =====
 def mostrar_menu():
-    print("\n---- MENÚ PRINCIPAL ----")
+    print("\n========== MENÚ PRINCIPAL ==========")
     print("1. Agregar libro")
     print("2. Buscar libro")
     print("3. Eliminar libro")
     print("4. Actualizar disponibilidad")
     print("5. Mostrar libros")
     print("6. Salir")
-    print("---- oooo ----")
+    print("=====================================")
 
 
 def leer_opcion():
     while True:
         try:
-            op = int(input("Seleccione una opción: "))   # op = opcion
+            op = int(input("Seleccione una opción: "))
             if 1 <= op <= 6:
                 return op
             else:
@@ -119,45 +119,4 @@ def mostrar_libros(libros):
         print(f"Copias: {libro['copias']}")
         print(f"Préstamo: {libro['prestamo']}")
         print(f"Estado: {estado}")
-        print("*" * 40)
-
-
-# ===== PROGRAMA PRINCIPAL =====
-def main():
-    libros = []
-
-    while True:
-        mostrar_menu()
-        opcion = leer_opcion()
-
-        if opcion == 1:
-            agregar_libro(libros)
-
-        elif opcion == 2:
-            titulo = input("Ingrese título a buscar: ")
-            pos = buscar_libro(libros, titulo)
-
-            if pos != -1:
-                libro = libros[pos]
-                print("\nLibro encontrado:")
-                print(libro)
-            else:
-                print("No encontrado")
-
-        elif opcion == 3:
-            eliminar_libro(libros)
-
-        elif opcion == 4:
-            actualizar_disponibilidad(libros)
-            print("Disponibilidad actualizada")
-
-        elif opcion == 5:
-            mostrar_libros(libros)
-
-        elif opcion == 6:
-            print("Gracias por usar el sistema. Vuelva pronto.")
-            break
-
-
-# Ejecutar
-main()
+        print("==== oooo ====")
